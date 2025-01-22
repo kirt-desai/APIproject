@@ -8,7 +8,7 @@ function fetchAvatarEpisodes() {
         .then(data => {
             displayAvatarEpisodes(data);
         })
-        .catch(error => console.error('Error fetching avatar episodes:', error));
+        .catch(error => console.error('ERROR fetching avatar episodes:', error));
 }
 
 function fetchAvatarCharacters() {
@@ -17,7 +17,7 @@ function fetchAvatarCharacters() {
         .then(data => {
             displayAvatarCharacters(data);
         })
-        .catch(error => console.error('Error fetching avatar characters:', error));
+        .catch(error => console.error('ERROR fetching avatar characters:', error));
 }
 
 function displayAvatarEpisodes(data) {
