@@ -1,2 +1,2 @@
 # APIproject
-My Open API - https://sampleapis.com/api-list/avatar
+My Open API - https://www.swapi.tech/api/films
