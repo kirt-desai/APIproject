@@ -1,54 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
-    fetchAvatarEpisodes();
-});
+document.getElementById("loadTitles").addEventListener("click", () => fetchFilms("titles"));
+document.getElementById("loadDates").addEventListener("click", () => fetchFilms("release_dates"));
 
-function fetchAvatarEpisodes() {
-    fetch('https://api.sampleapis.com/avatar/episodes')
+function fetchFilms(type) {
+    const endpoint = "https://www.swapi.tech/api/films";
+    
+    fetch(endpoint)
         .then(response => response.json())
-        .then(data => {
-            displayAvatarEpisodes(data);
-        })
-        .catch(error => console.error('ERROR fetching avatar episodes:', error));
+        .then(data => displayFilms(data.result, type))
+        .catch(error => {
+            document.getElementById("dataDisplay").innerHTML = "<p>Error loading films.</p>";
+            console.error("Error fetching films:", error);
+        });
 }
 
-function fetchAvatarCharacters() {
-    fetch('https://api.sampleapis.com/avatar/characters')
-        .then(response => response.json())
-        .then(data => {
-            displayAvatarCharacters(data);
-        })
-        .catch(error => console.error('ERROR fetching avatar characters:', error));
-}
+function displayFilms(films, type) {
+    const displayArea = document.getElementById("dataDisplay");
+    displayArea.innerHTML = ""; // Clear previous content
 
-function displayAvatarEpisodes(data) {
-    const content = document.getElementById('content');
-    content.innerHTML = `
-        <div id="avatar-episodes">
-            <h2>Avatar Episodes</h2>
-            ${data.map(episode => `
-                <div class="episode-item">
-                    <h3>Season ${episode.season}, Episode ${episode.episode}</h3>
-                    <p>Title: ${episode.title}</p>
-                    <p>Air Date: ${episode.airDate}</p>
-                    <p>Description: ${episode.description}</p>
-                </div>
-            `).join('')}
-        </div>
-    `;
-}
+    films.forEach(film => {
+        const filmCard = document.createElement("div");
+        filmCard.className = "card";
 
-function displayAvatarCharacters(data) {
-    const content = document.getElementById('content');
-    content.innerHTML = `
-        <div id="avatar-characters">
-            <h2>Avatar Characters</h2>
-            ${data.map(character => `
-                <div class="character-item">
-                    <h3>${character.name}</h3>
-                    <p>Nation: ${character.nation}</p>
-                    <img src="${character.image}" alt="${character.name} Image">
-                </div>
-            `).join('')}
-        </div>
-    `;
+        if (type === "titles") {
+            filmCard.innerHTML = `<h3>${film.properties.title}</h3>`;
+        } else if (type === "release_dates") {
+            filmCard.innerHTML = `<p>Release Date: ${film.properties.release_date}</p>`;
+        }
+
+        displayArea.appendChild(filmCard);
+    });
 }
