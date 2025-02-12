@@ -1,46 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    text-align: center;
+    margin: 20px;
     background-color: #f4f4f4;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header h1 {
-    margin: 0;
+nav {
+    margin-bottom: 20px;
 }
 
 button {
+    margin: 5px;
     padding: 10px 20px;
-    margin: 10px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-#avatar-info, #avatar-characters {
-    background: #fff;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#dataDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.character-item {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+.card {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
 }
 
-.character-item img {
-    width: 100px;
-    height: auto;
+.card h3 {
+    margin: 5px 0;
 }
