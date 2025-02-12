@@ -2,23 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Avatar: The Last Airbender </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Films</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Avatar Episodes and Characters</h1>
-            <nav>
-                <button onclick="fetchAvatarEpisodes()">Avatar Episodes</button>
-                <button onclick="fetchAvatarCharacters()">Avatar Characters</button>
-            </nav>
-        </div>
-        <div id="content">
-            
-        </div>
-    </div>
+
+    <nav>
+        <button id="loadTitles">Show Film Titles</button>
+        <button id="loadDates">Show Release Dates</button>
+    </nav>
+
+    <main id="content">
+        <h1>Star Wars Films</h1>
+        <p>Click a button to load data.</p>
+        <div id="dataDisplay"></div>
+    </main>
 
     <script src="index.js"></script>
+
 </body>
 </html>
