@@ -35,3 +35,113 @@ button {
 .card h3 {
     margin: 5px 0;
 }
+
+/* Base styles for mobile devices */
+body {
+    font-size: 16px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+ul {
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px; 
+        background-color: #e0e0e0; 
+    }
+
+    h1 {
+        font-size: 28px; 
+        color: #222; 
+    }
+
+    ul {
+        margin: 20px; 
+        background-color: #fafafa; 
+    }
+    .experience-list {
+        flex-direction: row; 
+    }
+
+    .experience-list li {
+        flex: 1 1 150px; 
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px; 
+        background-color: #d0d0d0; 
+    }
+
+    h1 {
+        font-size: 32px; 
+        font-style: italic; 
+    }
+
+    ul {
+        padding: 30px; 
+        background-color: #ffffff; 
+    }
+    .experience-list {
+        flex-direction: row; 
+    }
+
+    .experience-list li {
+        flex: 1 1 200px; 
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Adequate spacing between fields */
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Button Styles */
+button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 18px; /* Larger text for easier touch */
+        padding: 16px; /* Increased padding for touch targets */
+    }
+
+    button {
+        font-size: 18px; /* Larger button text */
+        padding: 16px 24px; /* Increased button size */
+    }
+}
